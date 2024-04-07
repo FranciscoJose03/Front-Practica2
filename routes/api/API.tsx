@@ -21,6 +21,9 @@ export const handler: Handlers = {
             const body = await req.json();
             const response = await fetch("https://lospoquimones.deno.dev/", {
                 method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },                
                 body: JSON.stringify(body)
             });
             const data = await response.json();
